@@ -1,0 +1,693 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--
+  ANTES DE PUBLICAR, SUBSTITUA:
+  1. https://www.astera.eng.br  → o domínio real (aparece em canonical, og:url e og:image)
+  2. og-image.jpg                → suba o arquivo og-image.jpg na mesma pasta do index.html
+  3. E-mail e WhatsApp           → no rodapé e no objeto CONFIG do script, no fim do arquivo
+  4. Resultados marcados "EXEMPLO" → trocar por números reais de projetos da Astera
+-->
+<title>Astera Engenharia Industrial | Paradas no prazo e manutenção confiável</title>
+<meta name="description" content="Consultoria em engenharia industrial: planejamento e gestão de paradas, confiabilidade, projetos de melhoria e painéis de manutenção. Engenheiros em campo e avanço medido a cada turno.">
+<link rel="canonical" href="https://www.astera.eng.br/">
+<meta name="theme-color" content="#112B3C">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Astera Engenharia Industrial">
+<meta property="og:title" content="Sua parada termina no dia combinado | Astera">
+<meta property="og:description" content="Planejamento de paradas, confiabilidade e painéis de manutenção, com engenheiros na sua planta do plano à partida.">
+<meta property="og:url" content="https://www.astera.eng.br/">
+<meta property="og:image" content="https://www.astera.eng.br/og-image.jpg">
+<meta property="og:image:secure_url" content="https://www.astera.eng.br/og-image.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Logo da Astera, título 'Sua parada termina no dia combinado' e painel com a Curva S de uma parada">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sua parada termina no dia combinado | Astera">
+<meta name="twitter:description" content="Planejamento de paradas, confiabilidade e painéis de manutenção, com engenheiros na sua planta do plano à partida.">
+<meta name="twitter:image" content="https://www.astera.eng.br/og-image.jpg">
+<meta name="twitter:image:alt" content="Logo da Astera e painel com a Curva S de uma parada">
+
+<link rel="icon" type="image/svg+xml" href="{{FAVURI}}">
+
+<style>
+@font-face{font-family:"Barlow";font-weight:400;font-display:swap;src:url(data:font/woff2;base64,{{FONT_R}}) format("woff2")}
+@font-face{font-family:"Barlow";font-weight:500;font-display:swap;src:url(data:font/woff2;base64,{{FONT_M}}) format("woff2")}
+@font-face{font-family:"Barlow";font-weight:600;font-display:swap;src:url(data:font/woff2;base64,{{FONT_SB}}) format("woff2")}
+@font-face{font-family:"Barlow SC";font-weight:600;font-display:swap;src:url(data:font/woff2;base64,{{FONT_CSB}}) format("woff2")}
+@font-face{font-family:"Barlow SC";font-weight:700;font-display:swap;src:url(data:font/woff2;base64,{{FONT_CB}}) format("woff2")}
+
+:root{
+  --noite:#112B3C; --azul:#205375; --azul-claro:#DCE7EF; --laranja:#F66B0E; --laranja-texto:#B44A05;
+  --cinza:#EFEFEF; --papel:#FFFFFF; --linha:#D3DCE3; --texto-2:#46606F;
+  --ok:#2E8049; --aten:#B98A00; --crit:#C0392B;
+  --titulo:"Barlow SC","Barlow","Arial Narrow",Arial,sans-serif;
+  --corpo:"Barlow","Segoe UI",Roboto,Arial,sans-serif;
+  --max:1200px; --gut:clamp(20px,4vw,48px);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--papel);color:var(--noite);font:400 18px/1.55 var(--corpo);font-feature-settings:"lnum","kern"}
+img,svg{max-width:100%;display:block}
+a{color:var(--azul)}
+h1,h2,h3{font-family:var(--titulo);font-weight:700;line-height:1.05;margin:0;letter-spacing:-.005em}
+h2{font-size:clamp(34px,4.4vw,54px);max-width:18ch}
+h3{font-size:clamp(24px,2.3vw,30px);font-weight:600;line-height:1.12}
+p{margin:0}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gut)}
+.sec{padding:clamp(72px,10vw,128px) 0}
+.lead{font-size:clamp(18px,1.6vw,21px);color:var(--texto-2);max-width:60ch}
+:focus-visible{outline:3px solid var(--laranja);outline-offset:3px}
+.pular{position:absolute;left:-9999px;top:8px;background:var(--noite);color:#fff;padding:10px 14px;z-index:100}
+.pular:focus{left:8px}
+
+/* botões */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 26px;font:600 17px/1 var(--corpo);text-decoration:none;border-radius:3px;border:2px solid var(--azul);cursor:pointer;transition:background-color .15s,color .15s}
+.btn-pri{background:var(--azul);color:#fff}
+.btn-pri:hover{background:var(--noite);border-color:var(--noite)}
+.btn-sec{background:transparent;color:var(--azul)}
+.btn-sec:hover{background:var(--azul-claro)}
+
+/* nav */
+.nav{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(255,255,255,.96);border-bottom:1px solid transparent;transition:border-color .2s}
+.nav.rolou{border-bottom-color:var(--linha)}
+.nav .wrap{display:flex;align-items:center;gap:32px;height:76px}
+.nav .logo img{height:40px;width:auto}
+.nav nav{margin-left:auto}
+.nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
+.nav ul a{color:var(--noite);text-decoration:none;font-weight:500;font-size:16px}
+.nav ul a:hover{color:var(--azul);text-decoration:underline;text-underline-offset:6px}
+.nav .btn{min-height:44px;padding:0 18px;font-size:15px}
+@media (max-width:980px){.nav nav{display:none}.nav .btn{margin-left:auto}}
+@media (max-width:420px){.nav .logo img{height:32px}.nav .btn{padding:0 12px;font-size:14px}}
+
+/* hero */
+.hero{position:relative;padding:150px 0 0;overflow:hidden;background:linear-gradient(var(--papel) 70%,var(--cinza) 70%)}
+.hero .folha{position:absolute;top:96px;right:max(-30px,calc((100vw - var(--max))/2 - 40px));width:min(50vw,660px);height:auto;pointer-events:none}
+.folha .eixos{stroke:#9DB2C1;stroke-width:1.2;fill:none}
+.folha .guia{stroke-dasharray:3 6}
+.folha .cota{stroke:var(--azul);stroke-width:1.1;color:var(--azul);fill:var(--azul);font:500 15px var(--corpo)}
+.folha .cota text{stroke:none}
+.folha .previsto{fill:none;stroke:var(--azul);stroke-width:2;stroke-dasharray:8 7;opacity:.7}
+.folha .realizado{fill:none;stroke:var(--laranja);stroke-width:5;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;animation:tracar 1.6s .35s cubic-bezier(.3,.1,.2,1) forwards}
+.folha .hoje{opacity:0;animation:surgir .4s 1.9s forwards}
+.folha .hoje line{stroke:var(--laranja);stroke-width:1.2;stroke-dasharray:3 4}
+.folha .hoje circle{fill:var(--papel);stroke:var(--laranja);stroke-width:3}
+.folha .hoje text{font:600 17px var(--titulo);fill:var(--noite)}
+.folha .hoje text.sub{font:500 14px var(--corpo);fill:var(--texto-2)}
+@media (max-width:560px){.hero .folha{display:none}}
+@keyframes tracar{to{stroke-dashoffset:0}}
+@keyframes surgir{to{opacity:1}}
+.hero .txt{position:relative;max-width:560px}
+.selo{display:inline-block;font-size:15px;font-weight:600;color:var(--azul);background:var(--azul-claro);padding:7px 12px;border-radius:2px;margin-bottom:26px}
+.hero h1{font-size:clamp(46px,7.2vw,92px);line-height:.96;letter-spacing:-.01em}
+.hero h1 span{color:var(--laranja)}
+.hero .lead{margin-top:24px;color:var(--noite);max-width:44ch}
+.acoes{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+.painel-wrap{position:relative;margin-top:clamp(56px,7vw,88px)}
+@media (max-width:860px){
+  .hero{padding-top:118px}
+  .hero .folha{position:relative;top:auto;right:auto;width:100%;margin:36px 0 -24px}
+}
+
+/* mockups (telas desenhadas) */
+.tela{background:var(--papel);border:1px solid #C5D1DA;border-radius:8px;box-shadow:0 30px 60px -30px rgba(17,43,60,.45),0 2px 6px rgba(17,43,60,.06);overflow:hidden;font-family:var(--corpo);color:var(--noite)}
+.tela-top{display:flex;align-items:center;gap:12px;padding:12px 18px;background:var(--noite);color:#fff;font-size:14px}
+.tela-top b{font-family:var(--titulo);font-weight:600;font-size:16px;letter-spacing:.01em}
+.tela-top span{opacity:.75}
+.tela-top .ao-vivo{margin-left:auto;display:flex;align-items:center;gap:7px;opacity:1}
+.tela-top .ao-vivo::before{content:"";width:8px;height:8px;border-radius:50%;background:#58C27D}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--linha)}
+.kpi{padding:16px 20px;border-right:1px solid var(--linha)}
+.kpi:last-child{border-right:0}
+.kpi small{display:block;font-size:13px;color:var(--texto-2)}
+.kpi strong{display:block;font:700 30px/1.1 var(--titulo);margin-top:4px}
+.kpi em{font-style:normal;font-size:13px;font-weight:600}
+.neg{color:var(--crit)}.pos{color:var(--ok)}.amb{color:var(--aten)}
+.painel-corpo{display:grid;grid-template-columns:1.65fr 1fr}
+.bloco{padding:18px 20px}
+.bloco + .bloco{border-left:1px solid var(--linha)}
+.bloco h4{margin:0 0 10px;font:600 15px var(--corpo);display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.leg{display:inline-flex;align-items:center;gap:6px;font-weight:500;color:var(--texto-2);font-size:13px}
+.leg i{width:18px;height:0;border-top:2px dashed var(--azul)}
+.leg i.r{border-top:3px solid var(--laranja)}
+.g-grid line{stroke:#E3E9EE}.g-grid text{font:12px var(--corpo);fill:#6A7F8C}
+.g-prev{fill:none;stroke:var(--azul);stroke-width:2;stroke-dasharray:6 5}
+.g-real{fill:none;stroke:var(--laranja);stroke-width:3.2;stroke-linejoin:round}
+.g-area{fill:rgba(246,107,14,.09)}
+.g-hoje{stroke:var(--noite);stroke-dasharray:2 3}
+.g-pt{fill:#fff;stroke:var(--laranja);stroke-width:2.5}
+.frentes{list-style:none;margin:0;padding:0;font-size:14px}
+.frentes li{display:grid;grid-template-columns:12px 1fr auto;gap:10px;align-items:center;padding:9px 0;border-bottom:1px solid #EDF1F4}
+.frentes li:last-child{border-bottom:0}
+.dot{width:10px;height:10px;border-radius:50%}
+.dot.ok{background:var(--ok)}.dot.aten{background:var(--aten)}.dot.crit{background:var(--crit)}
+.frentes b{font-variant-numeric:tabular-nums;font-weight:600}
+.frentes small{display:block;color:var(--texto-2);font-size:12px}
+@media (max-width:860px){
+  .kpis{grid-template-columns:repeat(2,1fr)}
+  .kpi:nth-child(2){border-right:0}.kpi:nth-child(-n+2){border-bottom:1px solid var(--linha)}
+  .painel-corpo{grid-template-columns:1fr}
+  .bloco + .bloco{border-left:0;border-top:1px solid var(--linha)}
+  .tela-top span.op{display:none}
+}
+
+/* problema */
+.problema{background:var(--cinza)}
+.dores{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:56px;border-top:2px solid var(--noite)}
+.dor{padding:28px 32px 8px 0}
+.dor + .dor{padding-left:32px;border-left:1px solid #C9D2D9}
+.dor h3{margin-bottom:14px}
+.dor p{color:var(--texto-2)}
+.dor .fig{height:64px;margin-bottom:20px}
+@media (max-width:860px){.dores{grid-template-columns:1fr}.dor,.dor + .dor{padding:28px 0;border-left:0;border-bottom:1px solid #C9D2D9}}
+
+/* o que fazemos */
+.frentes-trab{margin-top:56px;border-top:1px solid var(--linha)}
+.ft{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.5fr) minmax(0,1.2fr);gap:32px;padding:32px 0;border-bottom:1px solid var(--linha);align-items:start}
+.ft h3{color:var(--azul)}
+.ft p{color:var(--texto-2)}
+.ft .entrega{font-size:16px;color:var(--noite);background:var(--cinza);padding:14px 16px;border-radius:2px}
+.ft .entrega strong{display:block;font-weight:600;margin-bottom:2px}
+@media (max-width:860px){.ft{grid-template-columns:1fr;gap:12px}}
+
+/* recursos */
+.recurso{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:clamp(32px,6vw,88px);align-items:center}
+.recurso + .recurso{margin-top:clamp(80px,10vw,128px)}
+.recurso.inv{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr)}
+.recurso.inv .rtxt{order:2}
+.rtxt h3{font-size:clamp(28px,3vw,40px);font-weight:700;line-height:1.05}
+.rtxt p{margin-top:16px;color:var(--texto-2)}
+.rtxt ul{margin:24px 0 0;padding:0;list-style:none}
+.rtxt li{position:relative;padding:12px 0 12px 30px;border-top:1px solid var(--linha)}
+.rtxt li::before{content:"";position:absolute;left:2px;top:22px;width:14px;height:2px;background:var(--laranja)}
+@media (max-width:860px){.recurso,.recurso.inv{grid-template-columns:1fr}.recurso.inv .rtxt{order:0}}
+
+.gantt{list-style:none;margin:0;padding:6px 20px 14px;font-size:13px;position:relative}
+.gantt li{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:14px;align-items:center;padding:8px 0;border-bottom:1px solid #EDF1F4}
+.gn{display:flex;flex-direction:column}
+.gn em{font-style:normal;font-weight:600;font-size:12px}
+.gn em.crit{color:var(--crit)}.gn em.aten{color:var(--aten)}
+.gt{position:relative;height:22px;background:repeating-linear-gradient(90deg,transparent 0 calc(100%/14 - 1px),#EEF2F5 calc(100%/14 - 1px) calc(100%/14))}
+.gb-prev{position:absolute;top:3px;height:7px;background:#B7C7D3;border-radius:1px}
+.gb-real{position:absolute;top:12px;height:7px;border-radius:1px;background:var(--ok)}
+.gb-real.crit{background:var(--crit)}.gb-real.aten{background:var(--aten)}
+.gantt-hoje{position:absolute;top:0;bottom:0;width:0;border-left:2px dashed var(--laranja)}
+.gantt-cab{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:14px;padding:12px 20px 0;font-size:12px;color:var(--texto-2)}
+.gantt-cab div{display:flex;justify-content:space-between}
+
+.matriz-box{display:grid;grid-template-columns:auto 1fr;gap:20px;padding:20px}
+.matriz{display:grid;grid-template-columns:repeat(3,56px);grid-template-rows:repeat(3,56px);gap:4px}
+.matriz div{display:flex;align-items:center;justify-content:center;font:700 20px var(--titulo);color:#fff;border-radius:2px}
+.m1{background:#6FA07F}.m2{background:#D3B04A}.m3{background:#D9793F}.m4{background:var(--crit)}
+.eixo{font-size:12px;color:var(--texto-2);margin-top:8px}
+.os{width:100%;border-collapse:collapse;font-size:13px}
+.os th{text-align:left;font-weight:600;color:var(--texto-2);font-size:12px;padding:0 6px 8px 0;border-bottom:1px solid var(--linha)}
+.os td{padding:8px 6px 8px 0;border-bottom:1px solid #EDF1F4;font-variant-numeric:tabular-nums}
+.cls{display:inline-block;width:22px;text-align:center;font-weight:700;color:#fff;border-radius:2px;font-size:12px;line-height:20px}
+.cls.a{background:var(--crit)}.cls.b{background:var(--aten)}.cls.c{background:#6FA07F}
+@media (max-width:560px){.matriz-box{grid-template-columns:1fr}}
+
+.g-bar{fill:#9FB6C7}.g-bar.hot{fill:var(--azul)}
+.g-v{font:600 13px var(--corpo);fill:var(--noite)}.g-l{font:12px var(--corpo);fill:#6A7F8C}
+.g-base{stroke:#C5D1DA}.g-cum{fill:none;stroke:var(--laranja);stroke-width:2}.g-cumpt{fill:var(--laranja)}
+.g-mtbf{fill:none;stroke:var(--ok);stroke-width:2.5}
+.rca{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--linha)}
+.rca > div{padding:16px 20px;font-size:13px}
+.rca > div + div{border-left:1px solid var(--linha)}
+.rca b{display:block;font-size:14px;margin-bottom:4px}
+.rca strong{font:700 26px var(--titulo)}
+
+/* faixa */
+.faixa{background:var(--noite);color:#fff}
+.faixa h2{max-width:22ch;color:#fff}
+.faixa .lead{color:#C4D3DE;margin-top:22px}
+.faixa-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(40px,6vw,96px);align-items:end}
+.casos{list-style:none;margin:0;padding:0;border-top:1px solid #2F4D62}
+.casos li{display:grid;grid-template-columns:170px 1fr;gap:20px;padding:20px 0;border-bottom:1px solid #2F4D62;align-items:baseline}
+.casos strong{font:700 44px/1 var(--titulo);color:var(--laranja);white-space:nowrap}
+.casos span{color:#DCE6ED;font-size:16px}
+.casos small{display:block;color:#8FA8B9;font-size:14px;margin-top:4px}
+@media (max-width:860px){.faixa-grid{grid-template-columns:1fr}.casos li{grid-template-columns:1fr;gap:6px}.casos strong{font-size:38px}}
+
+/* grade de recursos menores */
+.grade{display:grid;grid-template-columns:repeat(4,1fr);gap:48px 40px;margin-top:56px}
+.item svg{width:36px;height:36px;stroke:var(--azul);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;margin-bottom:16px}
+.item h3{font-size:21px;margin-bottom:8px}
+.item p{font-size:16px;color:var(--texto-2)}
+@media (max-width:980px){.grade{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.grade{grid-template-columns:1fr}}
+
+/* como funciona */
+.como{background:var(--cinza)}
+.passos{list-style:none;margin:56px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);counter-reset:p;position:relative}
+.passos li{position:relative;padding:0 32px 0 0;counter-increment:p}
+.passos li::before{content:counter(p);display:flex;align-items:center;justify-content:center;width:48px;height:48px;border:2px solid var(--azul);border-radius:50%;font:700 22px var(--titulo);color:var(--azul);background:var(--cinza);position:relative;z-index:1;margin-bottom:24px}
+.passos li::after{content:"";position:absolute;top:24px;left:48px;right:0;border-top:2px solid var(--azul)}
+.passos li:last-child::after{display:none}
+.passos .dur{display:block;font-size:15px;font-weight:600;color:var(--laranja-texto);margin:10px 0 10px}
+.passos p{color:var(--texto-2)}
+@media (max-width:860px){.passos{grid-template-columns:1fr;gap:40px}.passos li::after{display:none}}
+
+/* contato */
+.contato-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.3fr);gap:clamp(40px,6vw,96px)}
+.contato-grid .lead{margin-top:20px}
+.garantias{margin-top:32px;padding:0;list-style:none;font-size:16px}
+.garantias li{padding:12px 0;border-top:1px solid var(--linha)}
+form{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
+.campo{display:flex;flex-direction:column;gap:6px}
+.campo.cheio{grid-column:1 / -1}
+label{font-weight:600;font-size:15px}
+label span{font-weight:400;color:var(--texto-2)}
+input,select,textarea{font:400 17px var(--corpo);color:var(--noite);border:1px solid #AEBECB;border-radius:3px;padding:12px 14px;background:#fff;width:100%}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--azul);box-shadow:0 0 0 3px rgba(32,83,117,.22)}
+textarea{min-height:120px;resize:vertical}
+.campo.erro input,.campo.erro select{border-color:var(--crit)}
+.msg-erro{font-size:14px;color:var(--crit);display:none}
+.campo.erro .msg-erro{display:block}
+.form-rodape{grid-column:1 / -1;display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+.form-rodape small{color:var(--texto-2);font-size:14px;max-width:44ch}
+.form-ok{grid-column:1/-1;background:#E6F2EA;border-left:0;padding:18px 20px;border-radius:3px;color:#1D5A33;font-weight:500}
+@media (max-width:860px){.contato-grid{grid-template-columns:1fr}}
+@media (max-width:560px){form{grid-template-columns:1fr}}
+
+/* rodapé */
+footer{background:var(--noite);color:#C4D3DE;padding:64px 0 40px;font-size:16px}
+.rod{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+.rod img{height:44px;width:auto;margin-bottom:20px}
+.rod h4{font:600 17px var(--titulo);color:#fff;margin:0 0 12px}
+.rod a{color:#fff}
+.rod ul{list-style:none;margin:0;padding:0;line-height:2}
+.rod-base{margin-top:48px;padding-top:24px;border-top:1px solid #2F4D62;font-size:14px;color:#8FA8B9;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+@media (max-width:860px){.rod{grid-template-columns:1fr}}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .folha .realizado{animation:none;stroke-dashoffset:0}
+  .folha .hoje{animation:none;opacity:1}
+}
+</style>
+</head>
+<body>
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="logo" href="#topo" aria-label="Astera Engenharia Industrial, início"><img src="data:image/webp;base64,{{LOGO}}" width="560" height="123" alt="Astera Engenharia e Consultoria Industrial"></a>
+    <nav aria-label="Seções">
+      <ul>
+        <li><a href="#problema">O problema</a></li>
+        <li><a href="#servicos">O que fazemos</a></li>
+        <li><a href="#recursos">Como medimos</a></li>
+        <li><a href="#como-funciona">Como funciona</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-pri" href="#contato">Agendar diagnóstico</a>
+  </div>
+</header>
+
+<main id="conteudo">
+<!-- 2. HERO -->
+<section class="hero" id="topo">
+  <div class="wrap">
+    <div class="txt">
+      <p class="selo">Agenda de diagnósticos aberta para o 1º semestre de 2027</p>
+      <h1>Sua parada termina <span>no dia combinado.</span></h1>
+      <p class="lead">A Astera planeja e acompanha paradas e a manutenção de plantas industriais, com engenheiros no campo e um painel que mostra o avanço real a cada turno.</p>
+      <div class="acoes">
+        <a class="btn btn-pri" href="#contato">Agendar diagnóstico</a>
+        <a class="btn btn-sec" href="#como-funciona">Ver como trabalhamos</a>
+      </div>
+    </div>
+
+    {{HERO_SVG}}
+    <div class="painel-wrap">
+      <div class="tela" id="painel" role="img" aria-label="Exemplo do painel de parada da Astera: dia 8 de 14, avanço previsto 64,0% e realizado 61,3%, com status de seis frentes de trabalho">
+        <div class="tela-top"><b>Painel de parada</b><span class="op">Parada geral da caldeira de recuperação</span><span class="ao-vivo">Atualizado 06:40, turno A</span></div>
+        <div class="kpis">
+          <div class="kpi"><small>Dia da parada</small><strong>8 de 14</strong><em class="amb">6 dias restantes</em></div>
+          <div class="kpi"><small>Avanço físico</small><strong>61,3%</strong><em class="neg">−2,7 p.p. do previsto</em></div>
+          <div class="kpi"><small>HH apropriado</small><strong>11.480</strong><em class="pos">de 18.200 orçados</em></div>
+          <div class="kpi"><small>Frentes no caminho crítico</small><strong>2 de 9</strong><em class="neg">1 com folga negativa</em></div>
+        </div>
+        <div class="painel-corpo">
+          <div class="bloco">
+            <h4>Curva S de avanço físico <span class="leg"><i></i>Previsto</span><span class="leg"><i class="r"></i>Realizado</span></h4>
+            {{DASH_CURVE}}
+          </div>
+          <div class="bloco">
+            <h4>Frentes de trabalho</h4>
+            <ul class="frentes">
+              <li><span class="dot crit"></span><span>Tubos do banco gerador<small>Caldeiraria, caminho crítico</small></span><b>48%</b></li>
+              <li><span class="dot aten"></span><span>Refratário da fornalha<small>Contratada B</small></span><b>41%</b></li>
+              <li><span class="dot ok"></span><span>Ventilador de tiragem<small>Mecânica rotativos</small></span><b>100%</b></li>
+              <li><span class="dot ok"></span><span>Elétrica e instrumentação<small>Equipe própria</small></span><b>66%</b></li>
+              <li><span class="dot aten"></span><span>Inspeção NR-13<small>Aguardando liberação</small></span><b>35%</b></li>
+              <li><span class="dot ok"></span><span>Andaimes<small>Contratada A</small></span><b>94%</b></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. PROBLEMA -->
+<section class="sec problema" id="problema">
+  <div class="wrap">
+    <h2>Onde a parada começa a atrasar, antes de alguém perceber</h2>
+    <div class="dores">
+      <div class="dor">
+        <svg class="fig" viewBox="0 0 120 64" aria-hidden="true"><g fill="none" stroke="#205375" stroke-width="1.6"><rect x="2" y="14" width="44" height="46"/><rect x="12" y="8" width="44" height="46" fill="#EFEFEF"/><rect x="22" y="2" width="44" height="46" fill="#EFEFEF"/><path d="M30 14h28M30 22h28M30 30h20M30 38h24"/></g><text x="78" y="36" font-family="Barlow SC,Barlow,sans-serif" font-weight="700" font-size="26" fill="#F66B0E">14×</text></svg>
+        <h3>O cronograma vira uma planilha por frente</h3>
+        <p>Mecânica, elétrica e caldeiraria mantêm versões próprias. Na reunião das 7h, três pessoas trazem três números diferentes para o mesmo avanço, e ninguém sabe qual vale.</p>
+      </div>
+      <div class="dor">
+        <svg class="fig" viewBox="0 0 120 64" aria-hidden="true"><path d="M4 60 C40 58 50 10 110 6" fill="none" stroke="#205375" stroke-width="1.6" stroke-dasharray="4 4"/><path d="M4 60 C36 59 48 30 78 26" fill="none" stroke="#F66B0E" stroke-width="3"/><line x1="78" y1="4" x2="78" y2="62" stroke="#112B3C" stroke-dasharray="2 3"/><line x1="104" y1="4" x2="104" y2="62" stroke="#C0392B" stroke-width="1.6"/></svg>
+        <h3>A Curva S chega depois do atraso</h3>
+        <p>Montada à mão no fim do turno, ela mostra o desvio quando a atividade crítica já perdeu a folga. Aí a recuperação custa hora extra, turno dobrado e, às vezes, um dia a mais de planta parada.</p>
+      </div>
+      <div class="dor">
+        <svg class="fig" viewBox="0 0 120 64" aria-hidden="true"><g stroke="#205375" stroke-width="1.6" fill="none"><rect x="4" y="44" width="14" height="16"/><rect x="24" y="36" width="14" height="24"/><rect x="44" y="26" width="14" height="34"/><rect x="64" y="16" width="14" height="44"/><rect x="84" y="6" width="14" height="54" fill="#F66B0E" stroke="#F66B0E"/></g></svg>
+        <h3>A preventiva vira corretiva</h3>
+        <p>O backlog cresce sem critério de criticidade. A equipe troca o plano pela urgência do dia, e o mesmo equipamento volta a parar pelo mesmo motivo três meses depois.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. O QUE FAZEMOS -->
+<section class="sec" id="servicos">
+  <div class="wrap">
+    <h2>Quatro frentes, uma equipe responsável pelo resultado</h2>
+    <p class="lead" style="margin-top:20px">Consultoria de engenharia com entrega que se mede em dias de parada, horas de equipamento disponível e backlog sob controle.</p>
+    <div class="frentes-trab">
+      <div class="ft">
+        <h3>Planejamento e gestão de paradas</h3>
+        <p>Congelamento de escopo, sequenciamento, caminho crítico, dimensionamento de contratadas e condução da reunião diária durante a execução.</p>
+        <div class="entrega"><strong>Você recebe</strong>Cronograma único integrado, Curva S por turno e relatório de lições aprendidas no pós-parada.</div>
+      </div>
+      <div class="ft">
+        <h3>Engenharia de confiabilidade</h3>
+        <p>Matriz de criticidade dos ativos, revisão dos planos preventivos e preditivos, análise de causa raiz das falhas repetitivas.</p>
+        <div class="entrega"><strong>Você recebe</strong>Planos de manutenção revisados no seu sistema e MTBF acompanhado por ativo crítico.</div>
+      </div>
+      <div class="ft">
+        <h3>Projetos e melhorias de engenharia</h3>
+        <p>Detalhamento mecânico, adequações à NR-12, estudos de viabilidade técnica e modificações para eliminar falhas crônicas.</p>
+        <div class="entrega"><strong>Você recebe</strong>Projeto executivo com memória de cálculo, lista de materiais e documentação as-built.</div>
+      </div>
+      <div class="ft">
+        <h3>Tecnologia aplicada à manutenção</h3>
+        <p>Painéis de avanço e indicadores ligados aos dados da planta, apontamento digital em campo e integração com o sistema de manutenção existente.</p>
+        <div class="entrega"><strong>Você recebe</strong>Painéis em uso pela sua equipe, com acesso e treinamento, sem trocar o sistema que você já tem.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. RECURSOS PRINCIPAIS -->
+<section class="sec" id="recursos" style="padding-top:0">
+  <div class="wrap">
+    <article class="recurso">
+      <div class="rtxt">
+        <h3>Desvio do caminho crítico visto no mesmo turno, não na semana seguinte</h3>
+        <p>O supervisor aponta o avanço no celular, em campo. O planejamento enxerga a folga de cada atividade antes da reunião diária.</p>
+        <ul>
+          <li>Apontamento por atividade, com foto e percentual, direto do campo</li>
+          <li>Curva S física e de homem-hora recalculadas a cada apontamento</li>
+          <li>Alerta quando uma atividade crítica perde folga, com o responsável e a contratada</li>
+        </ul>
+      </div>
+      <div class="tela" role="img" aria-label="Exemplo de cronograma de parada com barras previstas e realizadas; troca de tubos com folga de menos 6 horas">
+        <div class="tela-top"><b>Caminho crítico</b><span>Dia 8 de 14</span></div>
+        <div class="gantt-cab"><span>Atividade</span><div><span>D0</span><span>D7</span><span>D14</span></div></div>
+        <div style="position:relative">
+          <ul class="gantt">{{GANTT}}</ul>
+        </div>
+      </div>
+    </article>
+
+    <article class="recurso inv">
+      <div class="rtxt">
+        <h3>Backlog ordenado pelo risco de cada ativo, não por quem grita mais alto</h3>
+        <p>Operação, manutenção e segurança classificam juntos os equipamentos. A fila de ordens de serviço passa a seguir essa classificação.</p>
+        <ul>
+          <li>Matriz de criticidade A, B e C montada com a sua equipe em oficinas de campo</li>
+          <li>Ordens ordenadas por impacto em produção, segurança e meio ambiente</li>
+          <li>Backlog em semanas-homem por especialidade, para dimensionar a equipe com número</li>
+        </ul>
+      </div>
+      <div class="tela" role="img" aria-label="Exemplo de matriz de criticidade três por três e lista de ordens de serviço priorizadas">
+        <div class="tela-top"><b>Criticidade e backlog</b><span>Área de utilidades</span></div>
+        <div class="matriz-box">
+          <div>
+            <div class="matriz">
+              <div class="m2">7</div><div class="m3">4</div><div class="m4">3</div>
+              <div class="m1">18</div><div class="m2">11</div><div class="m3">5</div>
+              <div class="m1">42</div><div class="m1">20</div><div class="m2">6</div>
+            </div>
+            <p class="eixo">Consequência →<br>↑ Probabilidade</p>
+          </div>
+          <table class="os">
+            <thead><tr><th>OS</th><th>Ativo</th><th>Classe</th><th>Espera</th></tr></thead>
+            <tbody>
+              <tr><td>40218</td><td>Bomba de água de alimentação</td><td><span class="cls a">A</span></td><td class="neg">19 dias</td></tr>
+              <tr><td>40233</td><td>Compressor de ar 2</td><td><span class="cls a">A</span></td><td>6 dias</td></tr>
+              <tr><td>40190</td><td>Torre de resfriamento</td><td><span class="cls b">B</span></td><td>11 dias</td></tr>
+              <tr><td>40241</td><td>Válvula de bloqueio vapor</td><td><span class="cls b">B</span></td><td>3 dias</td></tr>
+              <tr><td>40102</td><td>Exaustor do galpão</td><td><span class="cls c">C</span></td><td>34 dias</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </article>
+
+    <article class="recurso">
+      <div class="rtxt">
+        <h3>Falha que se repete vira plano de ação com dono e prazo</h3>
+        <p>Olhamos o histórico de falhas por modo e por ativo, atacamos as poucas causas que concentram a maior parte das paradas e acompanhamos o efeito no MTBF.</p>
+        <ul>
+          <li>Análise de causa raiz com 5 porquês e diagrama de Ishikawa, feita com quem opera</li>
+          <li>Pareto de falhas por ativo e modo de falha, atualizado todo mês</li>
+          <li>MTBF e MTTR por família de equipamento, com meta pactuada com a gerência</li>
+        </ul>
+      </div>
+      <div class="tela" role="img" aria-label="Exemplo de Pareto de falhas de bombas centrífugas e evolução do MTBF de 212 para 322 horas">
+        <div class="tela-top"><b>Falhas em bombas centrífugas</b><span>Últimos 12 meses</span></div>
+        <div class="bloco">{{PARETO}}</div>
+        <div class="rca">
+          <div><b>MTBF, bombas classe A</b><strong class="pos">322 h</strong> <span style="color:var(--texto-2)">era 212 h</span>{{MTBF}}</div>
+          <div><b>Plano de ação: selo mecânico</b>Troca do plano de selagem API 11 por API 32 nas 4 bombas de licor.<br><span style="color:var(--texto-2)">Responsável: engenharia de manutenção, prazo 30/11</span></div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- 6. FAIXA DE DESTAQUE -->
+<section class="sec faixa" aria-labelledby="faixa-t">
+  <div class="wrap faixa-grid">
+    <div>
+      <h2 id="faixa-t">Quem planeja a parada está na planta durante a execução</h2>
+      <p class="lead">A Astera não entrega o cronograma e vai embora. O mesmo engenheiro que monta o plano conduz a reunião diária, atualiza o avanço e negocia a recuperação de prazo com as contratadas até a partida.</p>
+    </div>
+    <!-- EXEMPLO: resultados ilustrativos. Substituir por números reais de projetos da Astera antes de publicar. -->
+    <ul class="casos">
+      <li><strong>−3 dias</strong><span>na duração da parada geral de uma caldeira de recuperação, comparada à parada anterior<small>Papel e celulose</small></span></li>
+      <li><strong>−38%</strong><span>em ordens corretivas nos ativos classe A em seis meses<small>Mineração, beneficiamento</small></span></li>
+      <li><strong>1 painel</strong><span>no lugar de 14 planilhas de acompanhamento de frentes<small>Alimentos e bebidas</small></span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- 7. GRADE DE RECURSOS MENORES -->
+<section class="sec" aria-labelledby="grade-t">
+  <div class="wrap">
+    <h2 id="grade-t">O que mais a equipe entrega na sua planta</h2>
+    <div class="grade">
+      <div class="item">
+        <svg viewBox="0 0 36 36" aria-hidden="true"><circle cx="6" cy="18" r="3.5"/><circle cx="18" cy="8" r="3.5"/><circle cx="18" cy="28" r="3.5"/><circle cx="30" cy="18" r="3.5"/><path d="M9 16l6-6M9 20l6 6M21 10l6 6M21 26l6-6"/></svg>
+        <h3>Caminho crítico e sequenciamento</h3><p>Rede de atividades com folgas calculadas antes da parada começar.</p>
+      </div>
+      <div class="item">
+        <svg viewBox="0 0 36 36" aria-hidden="true"><path d="M5 25h26M7 25a11 11 0 0 1 22 0"/><path d="M15 14.5V10h6v4.5"/><path d="M4 29h28"/></svg>
+        <h3>Gestão de contratadas</h3><p>Escopo, efetivo e homem-hora apropriado por empresa, com medição conferida.</p>
+      </div>
+      <div class="item">
+        <svg viewBox="0 0 36 36" aria-hidden="true"><rect x="5" y="7" width="26" height="24" rx="1"/><path d="M5 13h26M11 4v6M25 4v6"/><path d="M12 22l4 4 8-8"/></svg>
+        <h3>Planos preventivos</h3><p>Tarefas, frequências e materiais revisados com base na criticidade e no histórico.</p>
+      </div>
+      <div class="item">
+        <svg viewBox="0 0 36 36" aria-hidden="true"><path d="M3 18h5l3-9 5 18 4-13 3 7 3-3h7"/></svg>
+        <h3>Preditiva coordenada</h3><p>Rotas de vibração, termografia e análise de óleo com laudo virando ordem de serviço.</p>
+      </div>
+      <div class="item">
+        <svg viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="20" r="12"/><path d="M18 20l6-6"/><path d="M9 26h3M24 26h3M18 8v2"/><circle cx="18" cy="20" r="1.6"/></svg>
+        <h3>Adequação NR-12 e NR-13</h3><p>Inventário, análise de risco e plano de adequação de máquinas e vasos de pressão.</p>
+      </div>
+      <div class="item">
+        <svg viewBox="0 0 36 36" aria-hidden="true"><path d="M4 31h28"/><path d="M8 31V21M15 31V15M22 31V18M29 31V9"/><path d="M6 14l8-6 7 4 9-8"/></svg>
+        <h3>Indicadores de manutenção</h3><p>MTBF, MTTR, disponibilidade e aderência ao plano calculados do mesmo jeito todo mês.</p>
+      </div>
+      <div class="item">
+        <svg viewBox="0 0 36 36" aria-hidden="true"><rect x="3" y="9" width="12" height="18" rx="1"/><rect x="21" y="9" width="12" height="18" rx="1"/><path d="M15 15h6M15 21h6"/></svg>
+        <h3>Integração com seu sistema</h3><p>Os painéis leem as ordens do sistema de manutenção que a planta já usa.</p>
+      </div>
+      <div class="item">
+        <svg viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="10" r="5"/><path d="M8 31c0-6 4.5-10 10-10s10 4 10 10"/><path d="M26 6l4-2M30 11h3"/></svg>
+        <h3>Formação da equipe de PCM</h3><p>Treinamento no método e nas ferramentas, para a planta seguir sem depender da consultoria.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. COMO FUNCIONA -->
+<section class="sec como" id="como-funciona">
+  <div class="wrap">
+    <h2>Da primeira visita ao resultado medido</h2>
+    <ol class="passos">
+      <li>
+        <h3>Diagnóstico em campo</h3>
+        <span class="dur">1 semana na planta</span>
+        <p>Entrevistas com manutenção e operação, leitura do backlog, das últimas paradas e dos indicadores. Você recebe um relatório com as perdas priorizadas por impacto.</p>
+      </li>
+      <li>
+        <h3>Plano e ferramentas</h3>
+        <span class="dur">2 a 4 semanas</span>
+        <p>Definimos escopo, metas e cronograma do trabalho. Configuramos os painéis com os dados da sua planta e treinamos quem vai usar.</p>
+      </li>
+      <li>
+        <h3>Execução acompanhada</h3>
+        <span class="dur">Durante a parada ou contrato contínuo</span>
+        <p>Engenheiro residente ou visitas programadas, com reunião mensal de resultado. O contrato mede entrega em indicador, não em horas vendidas.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- 9. CTA + FORMULÁRIO -->
+<section class="sec" id="contato">
+  <div class="wrap contato-grid">
+    <div>
+      <h2>Conte qual é a sua próxima parada</h2>
+      <p class="lead">Ou qual equipamento mais tem parado. Um engenheiro da Astera responde em até 1 dia útil para marcar o diagnóstico.</p>
+      <ul class="garantias">
+        <li>Conversa técnica, com engenheiro, desde o primeiro contato</li>
+        <li>Acordo de confidencialidade assinado antes da visita, se a planta exigir</li>
+        <li>Proposta com escopo, prazo e indicador de resultado definidos</li>
+      </ul>
+    </div>
+    <form id="form" name="diagnostico" method="POST" action="/obrigado.html" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+      <input type="hidden" name="form-name" value="diagnostico">
+      <p hidden><label>Não preencha: <input name="bot-field"></label></p>
+      <div class="campo"><label for="nome">Nome</label><input id="nome" name="nome" autocomplete="name" required><span class="msg-erro">Informe seu nome.</span></div>
+      <div class="campo"><label for="cargo">Cargo</label><input id="cargo" name="cargo" autocomplete="organization-title" required placeholder="Ex.: coordenador de manutenção"><span class="msg-erro">Informe seu cargo.</span></div>
+      <div class="campo"><label for="empresa">Empresa</label><input id="empresa" name="empresa" autocomplete="organization" required><span class="msg-erro">Informe a empresa.</span></div>
+      <div class="campo"><label for="planta">Cidade e UF da planta</label><input id="planta" name="planta" required placeholder="Ex.: Três Lagoas, MS"><span class="msg-erro">Informe onde fica a planta.</span></div>
+      <div class="campo"><label for="email">E-mail corporativo</label><input id="email" name="email" type="email" autocomplete="email" required><span class="msg-erro">Informe um e-mail válido, como nome@empresa.com.br.</span></div>
+      <div class="campo"><label for="tel">WhatsApp</label><input id="tel" name="whatsapp" type="tel" autocomplete="tel" required placeholder="(00) 00000-0000"><span class="msg-erro">Informe um número com DDD.</span></div>
+      <div class="campo"><label for="assunto">O que você precisa</label>
+        <select id="assunto" name="assunto" required>
+          <option value="">Escolha uma opção</option>
+          <option>Planejar ou acompanhar uma parada</option>
+          <option>Reduzir falhas e organizar o backlog</option>
+          <option>Projeto ou melhoria de engenharia</option>
+          <option>Painéis e tecnologia para manutenção</option>
+          <option>Outro assunto</option>
+        </select><span class="msg-erro">Escolha uma opção.</span></div>
+      <div class="campo"><label for="data">Próxima parada prevista <span>(opcional)</span></label><input id="data" name="proxima_parada" type="month"></div>
+      <div class="campo cheio"><label for="msg">Conte o contexto <span>(opcional)</span></label><textarea id="msg" name="mensagem" placeholder="Ex.: parada geral de 12 dias em março, 9 contratadas, a última atrasou 2 dias no refratário."></textarea></div>
+      <div class="form-rodape">
+        <button class="btn btn-pri" type="submit">Solicitar diagnóstico</button>
+        <small>Usamos seus dados só para responder a esta solicitação.</small>
+      </div>
+    </form>
+  </div>
+</section>
+</main>
+
+<!-- 10. RODAPÉ -->
+<footer>
+  <div class="wrap">
+    <div class="rod">
+      <div>
+        <img src="data:image/webp;base64,{{LOGONEG}}" width="560" height="123" alt="Astera Engenharia e Consultoria Industrial">
+        <p style="max-width:44ch">Soluções em engenharia industrial com foco em resultado mensurável, excelência técnica e parceria com a equipe de cada planta.</p>
+      </div>
+      <div>
+        <h4>Navegação</h4>
+        <ul><li><a href="#problema">O problema</a></li><li><a href="#servicos">O que fazemos</a></li><li><a href="#como-funciona">Como funciona</a></li><li><a href="#contato">Agendar diagnóstico</a></li></ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <!-- EXEMPLO: substituir pelos contatos reais -->
+        <ul><li><a href="mailto:contato@astera.eng.br">contato@astera.eng.br</a></li><li><a href="https://wa.me/5500000000000">WhatsApp comercial</a></li><li>Atendimento em todo o Brasil</li></ul>
+      </div>
+    </div>
+    <div class="rod-base"><span>© 2026 Astera Engenharia Industrial</span><span>Os painéis mostrados nesta página usam dados de exemplo.</span></div>
+  </div>
+</footer>
+
+<script>
+/* Formulário: na Netlify, os envios chegam em Site > Forms > "diagnostico".
+   Ative a notificação por e-mail em Site configuration > Notifications.
+   Fora da Netlify (ou se o envio falhar), abre o e-mail do visitante já preenchido. */
+const CONFIG = { email: "contato@astera.eng.br" };
+
+(function(){
+  const nav=document.getElementById('nav');
+  const onScroll=()=>nav.classList.toggle('rolou',window.scrollY>8);
+  onScroll(); window.addEventListener('scroll',onScroll,{passive:true});
+
+  // linha "hoje" no cronograma
+  document.querySelectorAll('.gantt').forEach(g=>{
+    const trilha=g.querySelector('.gt'); if(!trilha) return;
+    const pos=()=>{const r=trilha.getBoundingClientRect(),p=g.getBoundingClientRect();
+      let l=g.querySelector('.gantt-hoje'); if(!l){l=document.createElement('span');l.className='gantt-hoje';l.setAttribute('aria-hidden','true');g.appendChild(l);}
+      l.style.left=(r.left-p.left+r.width*{{HOJE}}/100)+'px';};
+    pos(); window.addEventListener('resize',pos);
+  });
+
+  const form=document.getElementById('form');
+  const valido=el=>{
+    if(!el.required) return true;
+    if(el.type==='email') return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(el.value.trim());
+    if(el.type==='tel') return el.value.replace(/\D/g,'').length>=10;
+    return el.value.trim()!=='';
+  };
+  form.querySelectorAll('.campo input,.campo select').forEach(el=>el.addEventListener('input',()=>{
+    if(valido(el)) el.closest('.campo').classList.remove('erro');
+  }));
+  form.addEventListener('submit',async e=>{
+    e.preventDefault();
+    let primeiro=null;
+    form.querySelectorAll('.campo input,.campo select').forEach(el=>{
+      const ok=valido(el); el.closest('.campo').classList.toggle('erro',!ok);
+      el.setAttribute('aria-invalid',!ok); if(!ok&&!primeiro) primeiro=el;
+    });
+    if(primeiro){primeiro.focus();return;}
+    const dados=new FormData(form); const btn=form.querySelector('button');
+    const sucesso=txt=>{form.innerHTML='<p class="form-ok" role="status">'+txt+'</p>';};
+    const porEmail=()=>{
+      let corpo=''; for(const [k,v] of dados){ if(v && k!=='form-name' && k!=='bot-field') corpo+=k.replace('_',' ')+': '+v+'\n'; }
+      location.href='mailto:'+CONFIG.email+'?subject='+encodeURIComponent('Diagnóstico: '+dados.get('empresa'))+'&body='+encodeURIComponent(corpo);
+      sucesso('Seu programa de e-mail foi aberto com a solicitação preenchida. Envie a mensagem para concluir.');
+    };
+    if(location.protocol==='file:'){ porEmail(); return; }
+    btn.disabled=true; btn.textContent='Enviando…';
+    try{
+      const r=await fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(dados).toString()});
+      if(!r.ok) throw 0;
+      sucesso('Solicitação enviada. Um engenheiro da Astera responde em até 1 dia útil.');
+    }catch(_){ btn.disabled=false; btn.textContent='Solicitar diagnóstico'; porEmail(); }
+  });
+})();
+</script>
+</body>
+</html>
